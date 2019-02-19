@@ -2,3 +2,12 @@
 
 # MIPS assembly files produced by coolc
 **/*.s
+
+# PA2
+
+# dependencies produced by make tool
+assignments/PA2/cool-lex.d
+# c source code produced by flex
+assignments/PA2/cool-lex.cc
+# executable files produced by g++
+assignments/PA2/*.o
