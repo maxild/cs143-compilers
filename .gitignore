@@ -1,1 +1,4 @@
 .vscode/
+
+# MIPS assembly files produced by coolc
+**/*.s
