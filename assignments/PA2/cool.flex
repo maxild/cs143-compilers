@@ -2,6 +2,9 @@
  *  The scanner definition for COOL.
  */
 
+/* This tells flex to read only one input file */
+%option noyywrap
+
 /*
  *  Stuff enclosed in %{ %} in the first section is copied verbatim to the
  *  output, so headers and global definitions are placed here to be visible
@@ -11,6 +14,7 @@
 #include <cool-parse.h>
 #include <stringtab.h>
 #include <utilities.h>
+
 
 /* The compiler assumes these identifiers. */
 #define yylval cool_yylval

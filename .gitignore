@@ -11,3 +11,4 @@ assignments/PA2/cool-lex.d
 assignments/PA2/cool-lex.cc
 # executable files produced by g++
 assignments/PA2/*.o
+assignments/PA2/lexer
