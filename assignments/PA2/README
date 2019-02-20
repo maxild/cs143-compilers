@@ -133,7 +133,7 @@ B.4 Compile handle_flags.cc -> handle_flags.o
 B.5 Compile cool-lex.cc -> cool-lex.o
     g++ -g -Wall -Wno-unused -Wno-write-strings -I. -I../../include/PA2 -I../../src/PA2 -c cool-lex.cc
 
-C.1 Link it all together
+C.1 Link it all together to build standalone lexer for testing
     g++ -g -Wall -Wno-unused -Wno-write-strings -I. -I../../include/PA2 -I../../src/PA2 \
         lextest.o utilities.o stringtab.o handle_flags.o cool-lex.o \
         -lfl \
