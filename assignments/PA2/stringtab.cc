@@ -18,41 +18,41 @@ template class StringTable<IdEntry>;
 template class StringTable<StringEntry>;
 template class StringTable<IntEntry>;
 
-Entry::Entry(char *s, int l, int i) : len(l), index(i) {
-  str = new char [len+1];
-  strncpy(str, s, len);
-  str[len] = '\0';
+Entry::Entry(char *s, int l, int i) : len(l), index(i)
+{
+    str = new char[len + 1];
+    strncpy(str, s, len);
+    str[len] = '\0';
 }
 
 int Entry::equal_string(char *string, int length) const
 {
-  return (len == length) && (strncmp(str,string,len) == 0);
+    return (len == length) && (strncmp(str, string, len) == 0);
 }
 
-ostream& Entry::print(ostream& s) const
+ostream &Entry::print(ostream &s) const
 {
-  return s << "{" << str << ", " << len << ", " << index << "}\n";
+    return s << "{" << str << ", " << len << ", " << index << "}\n";
 }
 
-ostream& operator<<(ostream& s, const Entry& sym) 
+ostream &operator<<(ostream &s, const Entry &sym)
 {
-  return s << sym.get_string();
+    return s << sym.get_string();
 }
 
-
-ostream& operator<<(ostream& s, Symbol sym)
+ostream &operator<<(ostream &s, Symbol sym)
 {
-  return s << *sym;
+    return s << *sym;
 }
 
 char *Entry::get_string() const
 {
-  return str;
+    return str;
 }
 
 int Entry::get_len() const
 {
-  return len;
+    return len;
 }
 
 // A Symbol is a pointer to an Entry.  Symbols are stored directly
@@ -62,17 +62,17 @@ int Entry::get_len() const
 //
 Symbol copy_Symbol(const Symbol s)
 {
-  return s;
+    return s;
 }
 
-void dump_Symbol(ostream& s, int n, Symbol sym)
+void dump_Symbol(ostream &s, int n, Symbol sym)
 {
-  s << pad(n) << sym << endl;
+    s << pad(n) << sym << endl;
 }
 
-StringEntry::StringEntry(char *s, int l, int i) : Entry(s,l,i) { }
-IdEntry::IdEntry(char *s, int l, int i) : Entry(s,l,i) { }
-IntEntry::IntEntry(char *s, int l, int i) : Entry(s,l,i) { }
+StringEntry::StringEntry(char *s, int l, int i) : Entry(s, l, i) {}
+IdEntry::IdEntry(char *s, int l, int i) : Entry(s, l, i) {}
+IntEntry::IntEntry(char *s, int l, int i) : Entry(s, l, i) {}
 
 IdTable idtable;
 IntTable inttable;
