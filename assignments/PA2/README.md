@@ -70,36 +70,36 @@ The include (.h) files for this assignment can be found in
 Instructions
 ------------
 
-	To compile your lextest program type:
+To compile your lextest program type:
 
-	% make lexer
+% make lexer
 
-	Run your lexer by putting your test input in a file 'foo.cl' and
-	run the lextest program:
+Run your lexer by putting your test input in a file 'foo.cl' and
+run the lextest program:
 
-	% ./lexer foo.cl
+% ./lexer foo.cl
 
-	To run your lexer on the file test.cl type:
+To run your lexer on the file test.cl type:
 
-	% make dotest
+% make dotest
 
-	If you think your lexical analyzer is correct and behaves like
-	the one we wrote, you can actually try 'mycoolc' and see whether
-	it runs and produces correct code for any examples.
-	If your lexical analyzer behaves in an
-	unexpected manner, you may get errors anywhere, i.e. during
-	parsing, during semantic analysis, during code generation or
-	only when you run the produced code on spim. So beware.
+If you think your lexical analyzer is correct and behaves like
+the one we wrote, you can actually try 'mycoolc' and see whether
+it runs and produces correct code for any examples.
+If your lexical analyzer behaves in an
+unexpected manner, you may get errors anywhere, i.e. during
+parsing, during semantic analysis, during code generation or
+only when you run the produced code on spim. So beware.
 
-	If you change architectures you must issue
+If you change architectures you must issue
 
-	% make clean
+% make clean
 
-	when you switch from one type of machine to the other.
-	If at some point you get weird errors from the linker,
-	you probably forgot this step.
+when you switch from one type of machine to the other.
+If at some point you get weird errors from the linker,
+you probably forgot this step.
 
-	GOOD LUCK!
+GOOD LUCK!
 
 ---8<------8<------8<------8<---cut here---8<------8<------8<------8<---
 
@@ -166,3 +166,52 @@ with multiple .flex input files, so with the option above we can safely not link
 
 A more complete solution would declare & define yylex as extern "C" in order to not C++ mangle the name of it in the symbol
 table of our object code so it provides what libfl.so expects.
+
+====
+
+Test that the following works
+
+```bash
+$ make lexer
+```
+...
+
+```bash
+$ cp /usr/class/cs143/examples/hello_world.cl .
+$ ./mycoolc hello_world.cl
+$ spim hello_world.s
+SPIM Version 6.5 of January 4, 2003
+Copyright 1990-2003 by James R. Larus (larus@cs.wisc.edu).
+All Rights Reserved.
+See the file README for a full copyright notice.
+Loaded: /usr/class/cs143/lib/trap.handler
+Hello, World.
+COOL program successfully executed
+Stats -- #instructions : 154
+#reads : 27 #writes 22 #branches 28 #other 77
+```
+
+====
+
+How to Submit
+
+1. Download the grading script from here and put it in the directory in which you are doing the assignment (where the cool.flex or cool.lex file is). The easiest way to do so is to go to your assignment directory, and run in the VMls:
+
+```
+wget http://spark-university.s3.amazonaws.com/stanford-compilers/scripts/pa1-grading.pl
+```
+
+This will save the script (pa1-grading.pl) in your assignment directory.
+
+2. Run the script by typing (Note that you can also make the script executable by running `chmod a+x pa1-grading.pl` first, and then running it directly as `./pa1-grading.pl`
+)
+
+```
+perl pa1-grading.pl
+```
+
+3. The script will give you a grade at the end, as well as a submission code. If you want to figure out why your lexer is failing certain tests, the tests will be put in the ./grading subdirectory. The output from your code will be in the ./grading/test-output directory.
+
+4. Once you are satisfied with your grade, click on the arrow above or beneath to go to the "Programming Assignment 1 Submission" quiz. You can use this link to go directly to the quiz. Copy-and-paste the code from the script (to copy from the terminal in VirtualBox, use ctrl+shift+c) into the "Submission code:" box. Once you submit the quiz, your score should appear for the quiz. You can also resubmit the quiz if you wish to update your grade.
+
+

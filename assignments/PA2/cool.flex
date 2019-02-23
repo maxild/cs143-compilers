@@ -15,7 +15,6 @@
 #include <stringtab.h>
 #include <utilities.h>
 
-
 /* The compiler assumes these identifiers. */
 #define yylval cool_yylval
 #define yylex  cool_yylex
