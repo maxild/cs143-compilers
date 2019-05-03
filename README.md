@@ -5,6 +5,8 @@
 
 - http://web.stanford.edu/class/cs143/
 
+- https://web.stanford.edu/class/archive/cs/cs143/cs143.1128/
+
 ## F# links
 
 - https://github.com/fsprojects/zzarchive-powerpack Where are FsLex and FsYacc?
