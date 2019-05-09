@@ -7,6 +7,13 @@
 
 - https://web.stanford.edu/class/archive/cs/cs143/cs143.1128/
 
+## Other compiler courses
+
+- [CS 421/521](http://flint.cs.yale.edu/cs421/index.html): Compilers and Interpreters
+Spring 2017, Yale University. Appel and SML.
+
+- https://parasol.tamu.edu/~rwerger/Courses/434/
+
 ## F# links
 
 - https://github.com/fsprojects/zzarchive-powerpack Where are FsLex and FsYacc?
